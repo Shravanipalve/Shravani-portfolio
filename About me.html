@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About me</title>
+</head>
+<body>
+<style>
+   body {
+            font-family: 'Satoshi', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-size: 24px;
+        }
+    .portfolio-section {
+      background-color: #0a0a0a;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      align-items: center;
+      padding: 74px 77px 165px;
+    }
+    
+    @media (max-width: 991px) {
+      .portfolio-section {
+        padding: 0 20px 100px;
+      }
+    }
+    
+    .header-container {
+      display: flex;
+          width: 100%;
+          height: 85px;
+          align-items: center;
+          justify-content: space-between;
+          flex-wrap: wrap;
+          font-size: 24px;
+          margin-top: -80px;
+          position: fixed;
+          background-color: #0b0b0b;
+    }
+    
+    @media (max-width: 991px) {
+      .header-container {
+        max-width: 100%;
+      }
+    }
+    
+    .logo {
+      font-family: Samarkan, sans-serif;
+      font-weight: 400;
+      align-self: stretch;
+      margin-left: 60px;
+    }
+    
+    .nav-menu {
+            align-self: stretch;
+            display: flex;
+            min-width: 240px;
+            align-items: start;
+            gap: 40px 51px;
+            font-family: 'Satoshi', sans-serif;
+            font-weight: 500;
+            justify-content: start;
+            margin: auto 0;
+            margin-right: 50px;
+    }
+
+    .nav-menu a {
+            color: rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 20px;
+        }
+
+        .nav-menu a:hover, .nav-menu a:focus {
+            color: white;
+            text-decoration: underline;
+        }
+    .quote {
+      color: #fff;
+      text-align: center;
+      margin-top: 85px;
+      width: 713px;
+      font: 400 45px Caveat, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .quote {
+        max-width: 100%;
+        margin-top: 40px;
+        font-size: 40px;
+      }
+    }
+    
+    .about-container {
+      width: 100%;
+      max-width: 1224px;
+      margin: 55px 0 0 11px;
+    }
+    
+    @media (max-width: 991px) {
+      .about-container {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .about-content {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .about-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .profile-image-wrapper {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 38%;
+      margin-left: 0;
+    }
+    
+    @media (max-width: 991px) {
+      .profile-image-wrapper {
+        width: 100%;
+      }
+    }
+    
+    .profile-image {
+      aspect-ratio: 0.72;
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      border-radius: 8px;
+    }
+    
+    @media (max-width: 991px) {
+      .profile-image {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .bio-wrapper {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 62%;
+      margin-left: 20px;
+    }
+    
+    @media (max-width: 991px) {
+      .bio-wrapper {
+        width: 100%;
+      }
+    }
+    
+    .bio-text {
+      color: rgba(255, 255, 255, 0.6);
+      font: 300 20px Satoshi, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .bio-text {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .contact-links {
+      display: flex;
+      width: 219px;
+      max-width: 100%;
+      gap: 20px;
+      white-space: nowrap;
+      justify-content: space-between;
+      margin: 45px 0 0 28px;
+      font: 400 20px Inter, sans-serif;
+      text-decoration: none;
+      margin-top: -30px;
+      margin-left: -10px;
+    }
+
+
+    @media (max-width: 991px) {
+      .contact-links {
+        margin-top: 40px;
+        white-space: initial;
+      }
+    }
+    
+    .contact-item {
+      display: flex;
+      gap: 11px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .contact-item:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 991px) {
+      .contact-item {
+        white-space: initial;
+      }
+    }
+    
+    .contact-icon {
+      aspect-ratio: 1;
+      object-fit: contain;
+      object-position: center;
+      width: 24px;
+    }
+    
+    .resume-button {
+      align-self: stretch;
+      border-radius: 6px;
+      background-color: #fff;
+      margin-top: 15px;
+      gap: 8px;
+      color: #000;
+      padding: 10px 10px;
+      font: 500 20px 'Satoshi', sans-serif;
+      height: 30px;
+      width: 165px;
+      text-decoration: none;
+      text-align: center;
+      margin-left: 570px;
+    }
+    
+    .resume-button:hover {
+
+      background-color: rgb(173, 114, 4);
+      color: #fff;
+    }
+
+    @media (max-width: 991px) {
+     .resume-button {
+        margin-left: 330px;
+      }
+
+      .resume-button:hover {
+        background-color: rgb(173, 114, 4);
+        color: #fff;
+      }
+    }
+
+    .gallery-title {
+      color: #fff;
+      margin-top: 152px;
+      font: 400 64px "Kaftan Serif - Trial", -apple-system, Roboto, Helvetica, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .gallery-title {
+        max-width: 100%;
+        margin-top: 40px;
+        font-size: 40px;
+      }
+    }
+    
+    .gallery-row {
+      align-self: stretch;
+      margin-top: 116px;
+    }
+    
+    @media (max-width: 991px) {
+      .gallery-row {
+        max-width: 100%;
+        margin: 40px 9px 0 0;
+      }
+    }
+    
+    .gallery-items {
+      gap: 20px;
+      display: flex;
+    }
+    
+    @media (max-width: 991px) {
+      .gallery-items {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+    }
+    
+    .gallery-item {
+      display: flex;
+      flex-direction: column;
+      line-height: normal;
+      width: 33%;
+      margin-left: 0;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.2);
+    }
+    
+    @media (max-width: 991px) {
+      .gallery-item {
+        width: 100%;
+      }
+    }
+    
+    .gallery-image {
+      background-color: #d9d9d9;
+      display: flex;
+      width: 398px;
+      height: 407px;
+      aspect-ratio: 1;
+      margin: 0 auto;
+    }
+    
+    @media (max-width: 991px) {
+      .gallery-image {
+        margin-top: 38px;
+      }
+    }
+    
+    .footer-divider {
+      align-self: stretch;
+      margin-top: 179px;
+      height: 1px;
+      border: 1px solid #fff;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-divider {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .footer-title {
+      color: #fff;
+      margin-top: 57px;
+      font: 400 36px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-title {
+        max-width: 100%;
+        margin-top: 40px;
+      }
+    }
+    
+    .footer-line {
+      margin-top: 27px;
+      width: 377px;
+      max-width: 100%;
+      height: 1px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+    
+    .footer-contact {
+      display: flex;
+      width: 224px;
+      max-width: 100%;
+      align-items: start;
+      gap: 20px;
+      color: #fff;
+      white-space: nowrap;
+      justify-content: space-between;
+      margin: 28px 0 0 14px;
+      font: 400 20px Inter, sans-serif;
+    }
+    
+    @media (max-width: 991px) {
+      .footer-contact {
+        white-space: initial;
+      }
+    }
+    
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    </style>
+    
+    <section class="portfolio-section">
+      <header class="header-container">
+        <h1 class="logo"><img src="shravani.png" alt=""></h1>
+        <nav class="nav-menu">
+          <a href="About me.html">About</a>
+          <a href="#work">Work</a>
+          <a href="Shravani palve Resume 1.pdf">Resume</a>
+        </nav>
+      </header>
+      
+      <img src="/About Me/textt.png" class="quote"/>
+        
+      
+      <div class="about-container">
+        <div class="about-content">
+          <div class="profile-image-wrapper">
+            <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/67123985c2d86b89eb435147116b649852f8565a5f20c4b392c07479fea8b7cd?placeholderIfAbsent=true&apiKey=f5793e65ea5f4e088a8b8f31816c4b7f" class="profile-image" alt="Shravani Nikhil Palve's profile picture" />
+          </div>
+          <div class="bio-wrapper">
+            <p class="bio-text">
+              Hi, I'm Shravani Nikhil Palve, a passionate UI/UX designer from Nashik, currently in the final year of my Bachelor's degree at Sandip University. My journey in design is driven by the belief that great design isn't just about aesthetics—it's about crafting experiences that resonate with people and make their lives easier.
+              <br /><br />
+              Throughout my academic journey, I have honed the art of blending creativity with functionality, ensuring that every project I undertake is not only visually engaging but also deeply intuitive and user-focused. I specialize in creating seamless digital experiences that are rooted in solid UX principles, yet flexible enough to adapt to the unique needs of users.
+              <br /><br />
+              Alongside my design expertise, I bring a strong background in digital marketing and content creation. This has enabled me to think beyond the design phase, ensuring that the solutions I create not only captivate users but also drive engagement and inspire action. My work in these fields has taught me to approach challenges holistically, always seeking innovative solutions that have a real-world impact.
+              <br /><br />
+              I am deeply committed to excellence and innovation in every project, and I look forward to bringing fresh ideas, creativity, and a user-centered approach to every opportunity I take on.
+              <br /><br />
+              Let's create something meaningful together!
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="contact-links">
+        <a href="mailto:shravanipalve.uiux@gmail.com" class="contact-item">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eab062d737bb1e9bc891391959f151c4e867de3910ca3b38d7904a2ae5b6ffc3?placeholderIfAbsent=true&apiKey=f5793e65ea5f4e088a8b8f31816c4b7f" class="contact-icon" alt="" />
+          <span>Mail</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shravanipalve/" class="contact-item">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/bcd68fb4aba58737ed79d0fd027292754957a3f4e27dbdaf0e00e677366ac36f?placeholderIfAbsent=true&apiKey=f5793e65ea5f4e088a8b8f31816c4b7f" class="contact-icon" alt="" />
+          <span>Linkedin</span>
+        </a>
+      </div>
+      
+      <a href="Shravani palve Resume 1.pdf" class="resume-button">View my resume</a>
+      
+      <h2 class="gallery-title">Moments of Art in My Life</h2>
+      
+      <div class="gallery-row">
+        <div class="gallery-items">
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 1"><img src="About Me/IMG_2091[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 2"><img src="About Me/IMG_2662[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 3"><img src="About Me/IMG_4502[1] 1.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-row">
+        <div class="gallery-items">
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 4"><img src="About Me/IMG_4503[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 5"><img src="About Me/IMG_6978[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 6"><img src="About Me/IMG_4783[1] 1.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="gallery-row">
+        <div class="gallery-items">
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 7"><img src="About Me/IMG_5320[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 8"><img src="About Me/IMG_5754[1] 1.png" alt=""></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-image" role="img" aria-label="Art piece 9"><img src="About Me/IMG_5933[1] 1.png" alt=""></div>
+          </div>
+        </div>
+      </div>
+      
+      <hr class="footer-divider" />
+      
+      <h2 class="footer-title">Let's Build Something impactful</h2>
+      
+      <hr class="footer-line" />
+      
+      <div class="footer-contact">
+        <a href="mailto:shravanipalve.uiux@gmail.com" class="contact-item">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/eab062d737bb1e9bc891391959f151c4e867de3910ca3b38d7904a2ae5b6ffc3?placeholderIfAbsent=true&apiKey=f5793e65ea5f4e088a8b8f31816c4b7f" class="contact-icon" alt="" />
+          <span>Mail</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shravanipalve/" class="contact-item">
+          <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/bcd68fb4aba58737ed79d0fd027292754957a3f4e27dbdaf0e00e677366ac36f?placeholderIfAbsent=true&apiKey=f5793e65ea5f4e088a8b8f31816c4b7f" class="contact-icon" alt="" />
+          <span>Linkedin</span>
+        </a>
+      </div>
+    </section>
+</body>
+</html>
